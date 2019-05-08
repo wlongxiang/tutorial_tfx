@@ -1,0 +1,23 @@
+[2019-05-08 16:03:43,178] {__init__.py:1139} INFO - Dependencies all met for <TaskInstance: chicago_taxi_simple.SchemaGen.chicago_taxi_simple.SchemaGen.exec 2019-05-08T13:58:46.436844+00:00 [queued]>
+[2019-05-08 16:03:43,295] {__init__.py:1139} INFO - Dependencies all met for <TaskInstance: chicago_taxi_simple.SchemaGen.chicago_taxi_simple.SchemaGen.exec 2019-05-08T13:58:46.436844+00:00 [queued]>
+[2019-05-08 16:03:43,295] {__init__.py:1353} INFO - 
+--------------------------------------------------------------------------------
+[2019-05-08 16:03:43,296] {__init__.py:1354} INFO - Starting attempt 1 of 1
+[2019-05-08 16:03:43,296] {__init__.py:1355} INFO - 
+--------------------------------------------------------------------------------
+[2019-05-08 16:03:43,310] {__init__.py:1374} INFO - Executing <Task(PythonOperator): chicago_taxi_simple.SchemaGen.exec> on 2019-05-08T13:58:46.436844+00:00
+[2019-05-08 16:03:43,310] {base_task_runner.py:119} INFO - Running: [u'airflow', u'run', 'chicago_taxi_simple.SchemaGen', 'chicago_taxi_simple.SchemaGen.exec', '2019-05-08T13:58:46.436844+00:00', u'--job_id', '17', u'--raw', u'-sd', u'DAGS_FOLDER/taxi/taxi_pipeline_simple.py', u'--cfg_path', '/var/folders/jw/6_2vfq291nsd3m1zjpt4t3k07hs8bd/T/tmpPk_70F']
+[2019-05-08 16:03:43,698] {base_task_runner.py:101} INFO - Job 17: Subtask chicago_taxi_simple.SchemaGen.exec /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/airflow/configuration.py:590: DeprecationWarning: You have two airflow.cfg files: /Users/benjamin.wang/airflow/airflow.cfg and /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/airflow.cfg. Airflow used to look at ~/airflow/airflow.cfg, even when AIRFLOW_HOME was set to a different value. Airflow will now only read /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/airflow.cfg, and you should remove the other file
+[2019-05-08 16:03:43,699] {base_task_runner.py:101} INFO - Job 17: Subtask chicago_taxi_simple.SchemaGen.exec   category=DeprecationWarning,
+[2019-05-08 16:03:44,212] {base_task_runner.py:101} INFO - Job 17: Subtask chicago_taxi_simple.SchemaGen.exec [2019-05-08 16:03:44,211] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-05-08 16:03:44,444] {base_task_runner.py:101} INFO - Job 17: Subtask chicago_taxi_simple.SchemaGen.exec [2019-05-08 16:03:44,443] {__init__.py:305} INFO - Filling up the DagBag from /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/dags/taxi/taxi_pipeline_simple.py
+[2019-05-08 16:03:48,554] {base_task_runner.py:101} INFO - Job 17: Subtask chicago_taxi_simple.SchemaGen.exec [2019-05-08 16:03:48,554] {cli.py:517} INFO - Running <TaskInstance: chicago_taxi_simple.SchemaGen.chicago_taxi_simple.SchemaGen.exec 2019-05-08T13:58:46.436844+00:00 [running]> on host nlhfd-lt1436.corp.irdeto.com
+[2019-05-08 16:03:48,566] {python_operator.py:104} INFO - Exporting the following env vars:
+AIRFLOW_CTX_TASK_ID=chicago_taxi_simple.SchemaGen.exec
+AIRFLOW_CTX_DAG_ID=chicago_taxi_simple.SchemaGen
+AIRFLOW_CTX_EXECUTION_DATE=2019-05-08T13:58:46.436844+00:00
+AIRFLOW_CTX_DAG_RUN_ID=backfill_2019-05-08T13:58:46.436844+00:00
+[2019-05-08 16:03:48,579] {logging_mixin.py:95} INFO - [2019-05-08 16:03:48,579] {tf_logging.py:115} INFO - Infering schema from statistics.
+[2019-05-08 16:03:48,599] {logging_mixin.py:95} INFO - [2019-05-08 16:03:48,599] {tf_logging.py:115} INFO - Schema written to /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/SchemaGen/output/3/schema.pbtxt.
+[2019-05-08 16:03:48,606] {python_operator.py:113} INFO - Done. Returned value was: None
+[2019-05-08 16:03:53,185] {logging_mixin.py:95} INFO - [2019-05-08 16:03:53,183] {jobs.py:2562} INFO - Task exited with return code 0

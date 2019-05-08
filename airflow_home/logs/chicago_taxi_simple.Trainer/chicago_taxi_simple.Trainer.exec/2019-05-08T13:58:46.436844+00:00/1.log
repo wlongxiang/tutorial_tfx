@@ -1,0 +1,389 @@
+[2019-05-08 16:07:16,539] {__init__.py:1139} INFO - Dependencies all met for <TaskInstance: chicago_taxi_simple.Trainer.chicago_taxi_simple.Trainer.exec 2019-05-08T13:58:46.436844+00:00 [queued]>
+[2019-05-08 16:07:16,649] {__init__.py:1139} INFO - Dependencies all met for <TaskInstance: chicago_taxi_simple.Trainer.chicago_taxi_simple.Trainer.exec 2019-05-08T13:58:46.436844+00:00 [queued]>
+[2019-05-08 16:07:16,650] {__init__.py:1353} INFO - 
+--------------------------------------------------------------------------------
+[2019-05-08 16:07:16,650] {__init__.py:1354} INFO - Starting attempt 1 of 1
+[2019-05-08 16:07:16,650] {__init__.py:1355} INFO - 
+--------------------------------------------------------------------------------
+[2019-05-08 16:07:16,662] {__init__.py:1374} INFO - Executing <Task(PythonOperator): chicago_taxi_simple.Trainer.exec> on 2019-05-08T13:58:46.436844+00:00
+[2019-05-08 16:07:16,662] {base_task_runner.py:119} INFO - Running: [u'airflow', u'run', 'chicago_taxi_simple.Trainer', 'chicago_taxi_simple.Trainer.exec', '2019-05-08T13:58:46.436844+00:00', u'--job_id', '32', u'--raw', u'-sd', u'DAGS_FOLDER/taxi/taxi_pipeline_simple.py', u'--cfg_path', '/var/folders/jw/6_2vfq291nsd3m1zjpt4t3k07hs8bd/T/tmpkXz1kx']
+[2019-05-08 16:07:17,035] {base_task_runner.py:101} INFO - Job 32: Subtask chicago_taxi_simple.Trainer.exec /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/airflow/configuration.py:590: DeprecationWarning: You have two airflow.cfg files: /Users/benjamin.wang/airflow/airflow.cfg and /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/airflow.cfg. Airflow used to look at ~/airflow/airflow.cfg, even when AIRFLOW_HOME was set to a different value. Airflow will now only read /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/airflow.cfg, and you should remove the other file
+[2019-05-08 16:07:17,036] {base_task_runner.py:101} INFO - Job 32: Subtask chicago_taxi_simple.Trainer.exec   category=DeprecationWarning,
+[2019-05-08 16:07:17,514] {base_task_runner.py:101} INFO - Job 32: Subtask chicago_taxi_simple.Trainer.exec [2019-05-08 16:07:17,514] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-05-08 16:07:17,695] {base_task_runner.py:101} INFO - Job 32: Subtask chicago_taxi_simple.Trainer.exec [2019-05-08 16:07:17,695] {__init__.py:305} INFO - Filling up the DagBag from /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/dags/taxi/taxi_pipeline_simple.py
+[2019-05-08 16:07:20,791] {base_task_runner.py:101} INFO - Job 32: Subtask chicago_taxi_simple.Trainer.exec [2019-05-08 16:07:20,790] {cli.py:517} INFO - Running <TaskInstance: chicago_taxi_simple.Trainer.chicago_taxi_simple.Trainer.exec 2019-05-08T13:58:46.436844+00:00 [running]> on host nlhfd-lt1436.corp.irdeto.com
+[2019-05-08 16:07:20,800] {python_operator.py:104} INFO - Exporting the following env vars:
+AIRFLOW_CTX_TASK_ID=chicago_taxi_simple.Trainer.exec
+AIRFLOW_CTX_DAG_ID=chicago_taxi_simple.Trainer
+AIRFLOW_CTX_EXECUTION_DATE=2019-05-08T13:58:46.436844+00:00
+AIRFLOW_CTX_DAG_RUN_ID=backfill_2019-05-08T13:58:46.436844+00:00
+[2019-05-08 16:07:20,812] {logging_mixin.py:95} INFO - [2019-05-08 16:07:20,812] {tf_logging.py:115} INFO - Starting Executor execution.
+[2019-05-08 16:07:20,812] {logging_mixin.py:95} INFO - [2019-05-08 16:07:20,812] {tf_logging.py:115} INFO - Inputs for Executor is: {u'transform_output': [TransformPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Transform/transform_output/4/.7], u'transformed_examples': [ExamplesPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Transform/transformed_examples/4/train/.8, ExamplesPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Transform/transformed_examples/4/eval/.9], u'schema': [SchemaPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/SchemaGen/output/3/.6]}
+[2019-05-08 16:07:20,812] {logging_mixin.py:95} INFO - [2019-05-08 16:07:20,812] {tf_logging.py:115} INFO - Execution properties for Executor is: {u'log_root': u'/var/tmp/tfx/logs/chicago_taxi_simple/Trainer', u'module_file': u'/Users/benjamin.wang/devel/github/tutorial_tfx/taxi_utils.py', u'eval_args': u'{\n  "numSteps": 5000\n}', u'train_args': u'{\n  "numSteps": 10000\n}', u'custom_config': None}
+[2019-05-08 16:07:20,812] {logging_mixin.py:95} INFO - [2019-05-08 16:07:20,812] {tf_logging.py:115} INFO - Outputs for Executor is: {u'output': [ModelExportPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/.0]}
+[2019-05-08 16:07:20,830] {logging_mixin.py:95} INFO - [2019-05-08 16:07:20,830] {tf_logging.py:115} INFO - Using config: {'_save_checkpoints_secs': None, '_num_ps_replicas': 0, '_keep_checkpoint_max': 1, '_task_type': 'worker', '_global_id_in_cluster': 0, '_is_chief': True, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x12fbad410>, '_model_dir': u'/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir', '_protocol': None, '_save_checkpoints_steps': 999, '_keep_checkpoint_every_n_hours': 10000, '_service': None, '_session_config': allow_soft_placement: true
+graph_options {
+  rewrite_options {
+    meta_optimizer_iterations: ONE
+  }
+}
+, '_tf_random_seed': None, '_save_summary_steps': 100, '_device_fn': None, '_experimental_distribute': None, '_num_worker_replicas': 1, '_task_id': 0, '_log_step_count_steps': 100, '_evaluation_master': '', '_eval_distribute': None, '_train_distribute': None, '_master': ''}
+[2019-05-08 16:07:20,830] {logging_mixin.py:95} INFO - [2019-05-08 16:07:20,830] {tf_logging.py:115} INFO - Training model.
+[2019-05-08 16:07:20,830] {logging_mixin.py:95} INFO - [2019-05-08 16:07:20,830] {tf_logging.py:115} INFO - Not using Distribute Coordinator.
+[2019-05-08 16:07:20,831] {logging_mixin.py:95} INFO - [2019-05-08 16:07:20,831] {tf_logging.py:115} INFO - Running training and evaluation locally (non-distributed).
+[2019-05-08 16:07:20,831] {logging_mixin.py:95} INFO - [2019-05-08 16:07:20,831] {tf_logging.py:115} INFO - Start train and evaluate loop. The evaluate will happen after every checkpoint. Checkpoint frequency is determined based on RunConfig arguments: save_checkpoints_steps 999 or save_checkpoints_secs None.
+[2019-05-08 16:07:21,099] {logging_mixin.py:95} INFO - [2019-05-08 16:07:21,099] {tf_logging.py:125} WARNING - From /Users/benjamin.wang/devel/github/tutorial_tfx/taxi_utils.py:290: read_batch_features (from tensorflow.contrib.learn.python.learn.learn_io.graph_io) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.data.
+[2019-05-08 16:07:21,100] {logging_mixin.py:95} INFO - [2019-05-08 16:07:21,100] {tf_logging.py:125} WARNING - From /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/tensorflow/contrib/learn/python/learn/learn_io/graph_io.py:833: read_keyed_batch_features (from tensorflow.contrib.learn.python.learn.learn_io.graph_io) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.data.
+[2019-05-08 16:07:21,102] {logging_mixin.py:95} INFO - [2019-05-08 16:07:21,102] {tf_logging.py:125} WARNING - From /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/tensorflow/contrib/learn/python/learn/learn_io/graph_io.py:542: read_keyed_batch_examples (from tensorflow.contrib.learn.python.learn.learn_io.graph_io) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.data.
+[2019-05-08 16:07:21,105] {logging_mixin.py:95} INFO - [2019-05-08 16:07:21,104] {tf_logging.py:125} WARNING - From /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/tensorflow/contrib/learn/python/learn/learn_io/graph_io.py:423: string_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(string_tensor).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+[2019-05-08 16:07:21,111] {logging_mixin.py:95} INFO - [2019-05-08 16:07:21,111] {tf_logging.py:125} WARNING - From /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/tensorflow/python/training/input.py:276: input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(input_tensor).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+[2019-05-08 16:07:21,114] {logging_mixin.py:95} INFO - [2019-05-08 16:07:21,114] {tf_logging.py:125} WARNING - From /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/tensorflow/python/training/input.py:188: limit_epochs (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensors(tensor).repeat(num_epochs)`.
+[2019-05-08 16:07:21,117] {logging_mixin.py:95} INFO - [2019-05-08 16:07:21,117] {tf_logging.py:125} WARNING - From /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/tensorflow/python/training/input.py:197: __init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+[2019-05-08 16:07:21,120] {logging_mixin.py:95} INFO - [2019-05-08 16:07:21,120] {tf_logging.py:125} WARNING - From /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/tensorflow/python/training/input.py:197: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+[2019-05-08 16:07:21,125] {logging_mixin.py:95} INFO - [2019-05-08 16:07:21,125] {tf_logging.py:125} WARNING - From /Users/benjamin.wang/devel/github/tutorial_tfx/taxi_utils.py:88: __init__ (from tensorflow.python.ops.io_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.TFRecordDataset`.
+[2019-05-08 16:07:21,128] {logging_mixin.py:95} INFO - [2019-05-08 16:07:21,128] {tf_logging.py:125} WARNING - From /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/tensorflow/contrib/learn/python/learn/learn_io/graph_io.py:449: shuffle_batch_join (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.interleave(...).shuffle(min_after_dequeue).batch(batch_size)`.
+[2019-05-08 16:07:21,157] {logging_mixin.py:95} INFO - [2019-05-08 16:07:21,157] {tf_logging.py:125} WARNING - From /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/tensorflow/contrib/learn/python/learn/learn_io/graph_io.py:550: queue_parsed_features (from tensorflow.contrib.learn.python.learn.learn_io.graph_io) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.data.
+[2019-05-08 16:07:21,166] {logging_mixin.py:95} INFO - [2019-05-08 16:07:21,166] {tf_logging.py:115} INFO - Calling model_fn.
+[2019-05-08 16:07:22,419] {logging_mixin.py:95} INFO - [2019-05-08 16:07:22,419] {tf_logging.py:115} INFO - Done calling model_fn.
+[2019-05-08 16:07:22,420] {logging_mixin.py:95} INFO - [2019-05-08 16:07:22,420] {tf_logging.py:115} INFO - Create CheckpointSaverHook.
+[2019-05-08 16:07:23,112] {logging_mixin.py:95} INFO - [2019-05-08 16:07:23,112] {tf_logging.py:115} INFO - Graph was finalized.
+[2019-05-08 16:07:23,113] {base_task_runner.py:101} INFO - Job 32: Subtask chicago_taxi_simple.Trainer.exec 2019-05-08 16:07:23.113208: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+[2019-05-08 16:07:23,267] {logging_mixin.py:95} INFO - [2019-05-08 16:07:23,267] {tf_logging.py:115} INFO - Running local_init_op.
+[2019-05-08 16:07:23,287] {logging_mixin.py:95} INFO - [2019-05-08 16:07:23,287] {tf_logging.py:115} INFO - Done running local_init_op.
+[2019-05-08 16:07:23,330] {logging_mixin.py:95} INFO - [2019-05-08 16:07:23,329] {tf_logging.py:125} WARNING - From /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/tensorflow/python/training/monitored_session.py:804: start_queue_runners (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+[2019-05-08 16:07:25,011] {logging_mixin.py:95} INFO - [2019-05-08 16:07:25,011] {tf_logging.py:115} INFO - Saving checkpoints for 0 into /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt.
+[2019-05-08 16:07:25,768] {logging_mixin.py:95} INFO - [2019-05-08 16:07:25,768] {tf_logging.py:115} INFO - loss = 28.649975, step = 1
+[2019-05-08 16:07:26,398] {logging_mixin.py:95} INFO - [2019-05-08 16:07:26,397] {tf_logging.py:115} INFO - global_step/sec: 158.632
+[2019-05-08 16:07:26,400] {logging_mixin.py:95} INFO - [2019-05-08 16:07:26,399] {tf_logging.py:115} INFO - loss = 20.323977, step = 101 (0.632 sec)
+[2019-05-08 16:07:26,680] {logging_mixin.py:95} INFO - [2019-05-08 16:07:26,680] {tf_logging.py:115} INFO - global_step/sec: 353.584
+[2019-05-08 16:07:26,681] {logging_mixin.py:95} INFO - [2019-05-08 16:07:26,681] {tf_logging.py:115} INFO - loss = 20.64286, step = 201 (0.282 sec)
+[2019-05-08 16:07:26,848] {logging_mixin.py:95} INFO - [2019-05-08 16:07:26,848] {tf_logging.py:115} INFO - global_step/sec: 596.008
+[2019-05-08 16:07:26,849] {logging_mixin.py:95} INFO - [2019-05-08 16:07:26,849] {tf_logging.py:115} INFO - loss = 20.066948, step = 301 (0.168 sec)
+[2019-05-08 16:07:27,129] {logging_mixin.py:95} INFO - [2019-05-08 16:07:27,129] {tf_logging.py:115} INFO - global_step/sec: 355.213
+[2019-05-08 16:07:27,130] {logging_mixin.py:95} INFO - [2019-05-08 16:07:27,130] {tf_logging.py:115} INFO - loss = 19.357185, step = 401 (0.282 sec)
+[2019-05-08 16:07:27,299] {logging_mixin.py:95} INFO - [2019-05-08 16:07:27,299] {tf_logging.py:115} INFO - global_step/sec: 590.968
+[2019-05-08 16:07:27,299] {logging_mixin.py:95} INFO - [2019-05-08 16:07:27,299] {tf_logging.py:115} INFO - loss = 17.625107, step = 501 (0.169 sec)
+[2019-05-08 16:07:27,475] {logging_mixin.py:95} INFO - [2019-05-08 16:07:27,475] {tf_logging.py:115} INFO - global_step/sec: 565.815
+[2019-05-08 16:07:27,476] {logging_mixin.py:95} INFO - [2019-05-08 16:07:27,476] {tf_logging.py:115} INFO - loss = 19.596903, step = 601 (0.177 sec)
+[2019-05-08 16:07:27,702] {logging_mixin.py:95} INFO - [2019-05-08 16:07:27,701] {tf_logging.py:115} INFO - global_step/sec: 442.562
+[2019-05-08 16:07:27,703] {logging_mixin.py:95} INFO - [2019-05-08 16:07:27,703] {tf_logging.py:115} INFO - loss = 18.672424, step = 701 (0.227 sec)
+[2019-05-08 16:07:27,915] {logging_mixin.py:95} INFO - [2019-05-08 16:07:27,914] {tf_logging.py:115} INFO - global_step/sec: 469.01
+[2019-05-08 16:07:27,915] {logging_mixin.py:95} INFO - [2019-05-08 16:07:27,915] {tf_logging.py:115} INFO - loss = 18.818157, step = 801 (0.213 sec)
+[2019-05-08 16:07:28,078] {logging_mixin.py:95} INFO - [2019-05-08 16:07:28,078] {tf_logging.py:115} INFO - global_step/sec: 610.799
+[2019-05-08 16:07:28,079] {logging_mixin.py:95} INFO - [2019-05-08 16:07:28,079] {tf_logging.py:115} INFO - loss = 16.97811, step = 901 (0.164 sec)
+[2019-05-08 16:07:28,236] {logging_mixin.py:95} INFO - [2019-05-08 16:07:28,236] {tf_logging.py:115} INFO - Saving checkpoints for 999 into /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt.
+[2019-05-08 16:07:28,461] {logging_mixin.py:95} INFO - [2019-05-08 16:07:28,461] {tf_logging.py:115} INFO - Calling model_fn.
+[2019-05-08 16:07:29,712] {logging_mixin.py:95} INFO - [2019-05-08 16:07:29,712] {tf_logging.py:125} WARNING - Trapezoidal rule is known to produce incorrect PR-AUCs; please switch to "careful_interpolation" instead.
+[2019-05-08 16:07:29,736] {logging_mixin.py:95} INFO - [2019-05-08 16:07:29,736] {tf_logging.py:125} WARNING - Trapezoidal rule is known to produce incorrect PR-AUCs; please switch to "careful_interpolation" instead.
+[2019-05-08 16:07:29,757] {logging_mixin.py:95} INFO - [2019-05-08 16:07:29,757] {tf_logging.py:115} INFO - Done calling model_fn.
+[2019-05-08 16:07:29,778] {logging_mixin.py:95} INFO - [2019-05-08 16:07:29,777] {tf_logging.py:115} INFO - Starting evaluation at 2019-05-08-14:07:29
+[2019-05-08 16:07:29,984] {logging_mixin.py:95} INFO - [2019-05-08 16:07:29,984] {tf_logging.py:115} INFO - Graph was finalized.
+[2019-05-08 16:07:29,986] {logging_mixin.py:95} INFO - [2019-05-08 16:07:29,985] {tf_logging.py:115} INFO - Restoring parameters from /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt-999
+[2019-05-08 16:07:30,061] {logging_mixin.py:95} INFO - [2019-05-08 16:07:30,060] {tf_logging.py:115} INFO - Running local_init_op.
+[2019-05-08 16:07:30,102] {logging_mixin.py:95} INFO - [2019-05-08 16:07:30,101] {tf_logging.py:115} INFO - Done running local_init_op.
+[2019-05-08 16:07:31,450] {logging_mixin.py:95} INFO - [2019-05-08 16:07:31,450] {tf_logging.py:115} INFO - Evaluation [500/5000]
+[2019-05-08 16:07:32,411] {logging_mixin.py:95} INFO - [2019-05-08 16:07:32,411] {tf_logging.py:115} INFO - Evaluation [1000/5000]
+[2019-05-08 16:07:33,434] {logging_mixin.py:95} INFO - [2019-05-08 16:07:33,434] {tf_logging.py:115} INFO - Evaluation [1500/5000]
+[2019-05-08 16:07:34,397] {logging_mixin.py:95} INFO - [2019-05-08 16:07:34,397] {tf_logging.py:115} INFO - Evaluation [2000/5000]
+[2019-05-08 16:07:35,300] {logging_mixin.py:95} INFO - [2019-05-08 16:07:35,300] {tf_logging.py:115} INFO - Evaluation [2500/5000]
+[2019-05-08 16:07:36,366] {logging_mixin.py:95} INFO - [2019-05-08 16:07:36,366] {tf_logging.py:115} INFO - Evaluation [3000/5000]
+[2019-05-08 16:07:37,423] {logging_mixin.py:95} INFO - [2019-05-08 16:07:37,423] {tf_logging.py:115} INFO - Evaluation [3500/5000]
+[2019-05-08 16:07:38,389] {logging_mixin.py:95} INFO - [2019-05-08 16:07:38,389] {tf_logging.py:115} INFO - Evaluation [4000/5000]
+[2019-05-08 16:07:39,260] {logging_mixin.py:95} INFO - [2019-05-08 16:07:39,259] {tf_logging.py:115} INFO - Evaluation [4500/5000]
+[2019-05-08 16:07:40,147] {logging_mixin.py:95} INFO - [2019-05-08 16:07:40,147] {tf_logging.py:115} INFO - Evaluation [5000/5000]
+[2019-05-08 16:07:40,374] {logging_mixin.py:95} INFO - [2019-05-08 16:07:40,374] {tf_logging.py:115} INFO - Finished evaluation at 2019-05-08-14:07:40
+[2019-05-08 16:07:40,375] {logging_mixin.py:95} INFO - [2019-05-08 16:07:40,375] {tf_logging.py:115} INFO - Saving dict for global step 999: accuracy = 0.77663, accuracy_baseline = 0.776825, auc = 0.89692664, auc_precision_recall = 0.594268, average_loss = 0.4491247, global_step = 999, label/mean = 0.223175, loss = 17.964987, precision = 0.0, prediction/mean = 0.23012379, recall = 0.0
+[2019-05-08 16:07:40,783] {logging_mixin.py:95} INFO - [2019-05-08 16:07:40,783] {tf_logging.py:115} INFO - Saving 'checkpoint_path' summary for global step 999: /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt-999
+[2019-05-08 16:07:40,788] {logging_mixin.py:95} INFO - [2019-05-08 16:07:40,788] {tf_logging.py:115} INFO - global_step/sec: 7.86785
+[2019-05-08 16:07:40,790] {logging_mixin.py:95} INFO - [2019-05-08 16:07:40,789] {tf_logging.py:115} INFO - loss = 17.378792, step = 1001 (12.710 sec)
+[2019-05-08 16:07:40,979] {logging_mixin.py:95} INFO - [2019-05-08 16:07:40,979] {tf_logging.py:115} INFO - global_step/sec: 524.959
+[2019-05-08 16:07:40,980] {logging_mixin.py:95} INFO - [2019-05-08 16:07:40,980] {tf_logging.py:115} INFO - loss = 16.24797, step = 1101 (0.191 sec)
+[2019-05-08 16:07:41,180] {logging_mixin.py:95} INFO - [2019-05-08 16:07:41,180] {tf_logging.py:115} INFO - global_step/sec: 497.117
+[2019-05-08 16:07:41,181] {logging_mixin.py:95} INFO - [2019-05-08 16:07:41,181] {tf_logging.py:115} INFO - loss = 24.851631, step = 1201 (0.200 sec)
+[2019-05-08 16:07:41,372] {logging_mixin.py:95} INFO - [2019-05-08 16:07:41,372] {tf_logging.py:115} INFO - global_step/sec: 519.391
+[2019-05-08 16:07:41,373] {logging_mixin.py:95} INFO - [2019-05-08 16:07:41,373] {tf_logging.py:115} INFO - loss = 16.530518, step = 1301 (0.193 sec)
+[2019-05-08 16:07:41,570] {logging_mixin.py:95} INFO - [2019-05-08 16:07:41,570] {tf_logging.py:115} INFO - global_step/sec: 506.147
+[2019-05-08 16:07:41,571] {logging_mixin.py:95} INFO - [2019-05-08 16:07:41,571] {tf_logging.py:115} INFO - loss = 18.932877, step = 1401 (0.198 sec)
+[2019-05-08 16:07:41,755] {logging_mixin.py:95} INFO - [2019-05-08 16:07:41,755] {tf_logging.py:115} INFO - global_step/sec: 539.255
+[2019-05-08 16:07:41,756] {logging_mixin.py:95} INFO - [2019-05-08 16:07:41,756] {tf_logging.py:115} INFO - loss = 17.408772, step = 1501 (0.185 sec)
+[2019-05-08 16:07:41,953] {logging_mixin.py:95} INFO - [2019-05-08 16:07:41,953] {tf_logging.py:115} INFO - global_step/sec: 505.95
+[2019-05-08 16:07:41,954] {logging_mixin.py:95} INFO - [2019-05-08 16:07:41,954] {tf_logging.py:115} INFO - loss = 16.92635, step = 1601 (0.198 sec)
+[2019-05-08 16:07:42,143] {logging_mixin.py:95} INFO - [2019-05-08 16:07:42,143] {tf_logging.py:115} INFO - global_step/sec: 526.217
+[2019-05-08 16:07:42,144] {logging_mixin.py:95} INFO - [2019-05-08 16:07:42,144] {tf_logging.py:115} INFO - loss = 16.872751, step = 1701 (0.190 sec)
+[2019-05-08 16:07:42,331] {logging_mixin.py:95} INFO - [2019-05-08 16:07:42,331] {tf_logging.py:115} INFO - global_step/sec: 532.501
+[2019-05-08 16:07:42,332] {logging_mixin.py:95} INFO - [2019-05-08 16:07:42,332] {tf_logging.py:115} INFO - loss = 19.552452, step = 1801 (0.188 sec)
+[2019-05-08 16:07:42,520] {logging_mixin.py:95} INFO - [2019-05-08 16:07:42,519] {tf_logging.py:115} INFO - global_step/sec: 529.987
+[2019-05-08 16:07:42,520] {logging_mixin.py:95} INFO - [2019-05-08 16:07:42,520] {tf_logging.py:115} INFO - loss = 20.175827, step = 1901 (0.189 sec)
+[2019-05-08 16:07:42,677] {logging_mixin.py:95} INFO - [2019-05-08 16:07:42,676] {tf_logging.py:115} INFO - Saving checkpoints for 1998 into /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt.
+[2019-05-08 16:07:42,888] {logging_mixin.py:95} INFO - [2019-05-08 16:07:42,888] {tf_logging.py:115} INFO - Skip the current checkpoint eval due to throttle secs (600 secs).
+[2019-05-08 16:07:42,900] {logging_mixin.py:95} INFO - [2019-05-08 16:07:42,900] {tf_logging.py:115} INFO - global_step/sec: 263.067
+[2019-05-08 16:07:42,901] {logging_mixin.py:95} INFO - [2019-05-08 16:07:42,901] {tf_logging.py:115} INFO - loss = 18.029907, step = 2001 (0.381 sec)
+[2019-05-08 16:07:43,148] {logging_mixin.py:95} INFO - [2019-05-08 16:07:43,148] {tf_logging.py:115} INFO - global_step/sec: 402.753
+[2019-05-08 16:07:43,149] {logging_mixin.py:95} INFO - [2019-05-08 16:07:43,149] {tf_logging.py:115} INFO - loss = 15.201208, step = 2101 (0.247 sec)
+[2019-05-08 16:07:43,360] {logging_mixin.py:95} INFO - [2019-05-08 16:07:43,359] {tf_logging.py:115} INFO - global_step/sec: 472.889
+[2019-05-08 16:07:43,360] {logging_mixin.py:95} INFO - [2019-05-08 16:07:43,360] {tf_logging.py:115} INFO - loss = 15.617809, step = 2201 (0.212 sec)
+[2019-05-08 16:07:43,567] {logging_mixin.py:95} INFO - [2019-05-08 16:07:43,567] {tf_logging.py:115} INFO - global_step/sec: 481.192
+[2019-05-08 16:07:43,568] {logging_mixin.py:95} INFO - [2019-05-08 16:07:43,568] {tf_logging.py:115} INFO - loss = 16.151184, step = 2301 (0.208 sec)
+[2019-05-08 16:07:43,869] {logging_mixin.py:95} INFO - [2019-05-08 16:07:43,869] {tf_logging.py:115} INFO - global_step/sec: 331.653
+[2019-05-08 16:07:43,870] {logging_mixin.py:95} INFO - [2019-05-08 16:07:43,870] {tf_logging.py:115} INFO - loss = 19.293812, step = 2401 (0.301 sec)
+[2019-05-08 16:07:44,053] {logging_mixin.py:95} INFO - [2019-05-08 16:07:44,053] {tf_logging.py:115} INFO - global_step/sec: 542.92
+[2019-05-08 16:07:44,054] {logging_mixin.py:95} INFO - [2019-05-08 16:07:44,054] {tf_logging.py:115} INFO - loss = 17.664616, step = 2501 (0.184 sec)
+[2019-05-08 16:07:44,227] {logging_mixin.py:95} INFO - [2019-05-08 16:07:44,227] {tf_logging.py:115} INFO - global_step/sec: 573.835
+[2019-05-08 16:07:44,228] {logging_mixin.py:95} INFO - [2019-05-08 16:07:44,228] {tf_logging.py:115} INFO - loss = 16.952099, step = 2601 (0.174 sec)
+[2019-05-08 16:07:44,404] {logging_mixin.py:95} INFO - [2019-05-08 16:07:44,403] {tf_logging.py:115} INFO - global_step/sec: 567.071
+[2019-05-08 16:07:44,404] {logging_mixin.py:95} INFO - [2019-05-08 16:07:44,404] {tf_logging.py:115} INFO - loss = 18.498888, step = 2701 (0.176 sec)
+[2019-05-08 16:07:44,571] {logging_mixin.py:95} INFO - [2019-05-08 16:07:44,571] {tf_logging.py:115} INFO - global_step/sec: 595.848
+[2019-05-08 16:07:44,572] {logging_mixin.py:95} INFO - [2019-05-08 16:07:44,572] {tf_logging.py:115} INFO - loss = 17.408457, step = 2801 (0.168 sec)
+[2019-05-08 16:07:44,747] {logging_mixin.py:95} INFO - [2019-05-08 16:07:44,747] {tf_logging.py:115} INFO - global_step/sec: 569.382
+[2019-05-08 16:07:44,748] {logging_mixin.py:95} INFO - [2019-05-08 16:07:44,748] {tf_logging.py:115} INFO - loss = 17.47426, step = 2901 (0.176 sec)
+[2019-05-08 16:07:44,937] {logging_mixin.py:95} INFO - [2019-05-08 16:07:44,937] {tf_logging.py:115} INFO - Saving checkpoints for 2997 into /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt.
+[2019-05-08 16:07:45,140] {logging_mixin.py:95} INFO - [2019-05-08 16:07:45,140] {tf_logging.py:115} INFO - Skip the current checkpoint eval due to throttle secs (600 secs).
+[2019-05-08 16:07:45,150] {logging_mixin.py:95} INFO - [2019-05-08 16:07:45,150] {tf_logging.py:115} INFO - global_step/sec: 248.189
+[2019-05-08 16:07:45,151] {logging_mixin.py:95} INFO - [2019-05-08 16:07:45,151] {tf_logging.py:115} INFO - loss = 15.172057, step = 3001 (0.403 sec)
+[2019-05-08 16:07:45,367] {logging_mixin.py:95} INFO - [2019-05-08 16:07:45,366] {tf_logging.py:115} INFO - global_step/sec: 461.74
+[2019-05-08 16:07:45,367] {logging_mixin.py:95} INFO - [2019-05-08 16:07:45,367] {tf_logging.py:115} INFO - loss = 13.325704, step = 3101 (0.216 sec)
+[2019-05-08 16:07:45,542] {logging_mixin.py:95} INFO - [2019-05-08 16:07:45,542] {tf_logging.py:115} INFO - global_step/sec: 569.629
+[2019-05-08 16:07:45,543] {logging_mixin.py:95} INFO - [2019-05-08 16:07:45,543] {tf_logging.py:115} INFO - loss = 15.329244, step = 3201 (0.176 sec)
+[2019-05-08 16:07:45,720] {logging_mixin.py:95} INFO - [2019-05-08 16:07:45,720] {tf_logging.py:115} INFO - global_step/sec: 562.692
+[2019-05-08 16:07:45,721] {logging_mixin.py:95} INFO - [2019-05-08 16:07:45,720] {tf_logging.py:115} INFO - loss = 13.751239, step = 3301 (0.178 sec)
+[2019-05-08 16:07:45,917] {logging_mixin.py:95} INFO - [2019-05-08 16:07:45,916] {tf_logging.py:115} INFO - global_step/sec: 508.451
+[2019-05-08 16:07:45,917] {logging_mixin.py:95} INFO - [2019-05-08 16:07:45,917] {tf_logging.py:115} INFO - loss = 14.6036625, step = 3401 (0.197 sec)
+[2019-05-08 16:07:46,174] {logging_mixin.py:95} INFO - [2019-05-08 16:07:46,173] {tf_logging.py:115} INFO - global_step/sec: 389.734
+[2019-05-08 16:07:46,176] {logging_mixin.py:95} INFO - [2019-05-08 16:07:46,176] {tf_logging.py:115} INFO - loss = 14.994613, step = 3501 (0.259 sec)
+[2019-05-08 16:07:46,489] {logging_mixin.py:95} INFO - [2019-05-08 16:07:46,489] {tf_logging.py:115} INFO - global_step/sec: 317.172
+[2019-05-08 16:07:46,491] {logging_mixin.py:95} INFO - [2019-05-08 16:07:46,491] {tf_logging.py:115} INFO - loss = 12.836594, step = 3601 (0.315 sec)
+[2019-05-08 16:07:46,721] {logging_mixin.py:95} INFO - [2019-05-08 16:07:46,721] {tf_logging.py:115} INFO - global_step/sec: 429.518
+[2019-05-08 16:07:46,722] {logging_mixin.py:95} INFO - [2019-05-08 16:07:46,722] {tf_logging.py:115} INFO - loss = 18.920317, step = 3701 (0.231 sec)
+[2019-05-08 16:07:46,892] {logging_mixin.py:95} INFO - [2019-05-08 16:07:46,892] {tf_logging.py:115} INFO - global_step/sec: 584.031
+[2019-05-08 16:07:46,893] {logging_mixin.py:95} INFO - [2019-05-08 16:07:46,893] {tf_logging.py:115} INFO - loss = 15.761265, step = 3801 (0.171 sec)
+[2019-05-08 16:07:47,065] {logging_mixin.py:95} INFO - [2019-05-08 16:07:47,065] {tf_logging.py:115} INFO - global_step/sec: 578.298
+[2019-05-08 16:07:47,066] {logging_mixin.py:95} INFO - [2019-05-08 16:07:47,066] {tf_logging.py:115} INFO - loss = 16.397745, step = 3901 (0.173 sec)
+[2019-05-08 16:07:47,224] {logging_mixin.py:95} INFO - [2019-05-08 16:07:47,224] {tf_logging.py:115} INFO - Saving checkpoints for 3996 into /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt.
+[2019-05-08 16:07:47,390] {logging_mixin.py:95} INFO - [2019-05-08 16:07:47,390] {tf_logging.py:115} INFO - Skip the current checkpoint eval due to throttle secs (600 secs).
+[2019-05-08 16:07:47,400] {logging_mixin.py:95} INFO - [2019-05-08 16:07:47,400] {tf_logging.py:115} INFO - global_step/sec: 298.723
+[2019-05-08 16:07:47,401] {logging_mixin.py:95} INFO - [2019-05-08 16:07:47,401] {tf_logging.py:115} INFO - loss = 16.908888, step = 4001 (0.335 sec)
+[2019-05-08 16:07:47,560] {logging_mixin.py:95} INFO - [2019-05-08 16:07:47,560] {tf_logging.py:115} INFO - global_step/sec: 626.316
+[2019-05-08 16:07:47,560] {logging_mixin.py:95} INFO - [2019-05-08 16:07:47,560] {tf_logging.py:115} INFO - loss = 12.864745, step = 4101 (0.160 sec)
+[2019-05-08 16:07:47,723] {logging_mixin.py:95} INFO - [2019-05-08 16:07:47,722] {tf_logging.py:115} INFO - global_step/sec: 614.231
+[2019-05-08 16:07:47,724] {logging_mixin.py:95} INFO - [2019-05-08 16:07:47,724] {tf_logging.py:115} INFO - loss = 20.175169, step = 4201 (0.163 sec)
+[2019-05-08 16:07:47,909] {logging_mixin.py:95} INFO - [2019-05-08 16:07:47,909] {tf_logging.py:115} INFO - global_step/sec: 535.257
+[2019-05-08 16:07:47,910] {logging_mixin.py:95} INFO - [2019-05-08 16:07:47,910] {tf_logging.py:115} INFO - loss = 16.75599, step = 4301 (0.186 sec)
+[2019-05-08 16:07:48,123] {logging_mixin.py:95} INFO - [2019-05-08 16:07:48,122] {tf_logging.py:115} INFO - global_step/sec: 469.074
+[2019-05-08 16:07:48,124] {logging_mixin.py:95} INFO - [2019-05-08 16:07:48,123] {tf_logging.py:115} INFO - loss = 17.696482, step = 4401 (0.213 sec)
+[2019-05-08 16:07:48,324] {logging_mixin.py:95} INFO - [2019-05-08 16:07:48,324] {tf_logging.py:115} INFO - global_step/sec: 495.302
+[2019-05-08 16:07:48,325] {logging_mixin.py:95} INFO - [2019-05-08 16:07:48,325] {tf_logging.py:115} INFO - loss = 11.597067, step = 4501 (0.202 sec)
+[2019-05-08 16:07:48,539] {logging_mixin.py:95} INFO - [2019-05-08 16:07:48,538] {tf_logging.py:115} INFO - global_step/sec: 468.325
+[2019-05-08 16:07:48,541] {logging_mixin.py:95} INFO - [2019-05-08 16:07:48,540] {tf_logging.py:115} INFO - loss = 15.667435, step = 4601 (0.215 sec)
+[2019-05-08 16:07:48,909] {logging_mixin.py:95} INFO - [2019-05-08 16:07:48,909] {tf_logging.py:115} INFO - global_step/sec: 269.737
+[2019-05-08 16:07:48,910] {logging_mixin.py:95} INFO - [2019-05-08 16:07:48,910] {tf_logging.py:115} INFO - loss = 15.566631, step = 4701 (0.369 sec)
+[2019-05-08 16:07:49,202] {logging_mixin.py:95} INFO - [2019-05-08 16:07:49,202] {tf_logging.py:115} INFO - global_step/sec: 341.289
+[2019-05-08 16:07:49,205] {logging_mixin.py:95} INFO - [2019-05-08 16:07:49,204] {tf_logging.py:115} INFO - loss = 13.87631, step = 4801 (0.294 sec)
+[2019-05-08 16:07:49,548] {logging_mixin.py:95} INFO - [2019-05-08 16:07:49,547] {tf_logging.py:115} INFO - global_step/sec: 289.847
+[2019-05-08 16:07:49,553] {logging_mixin.py:95} INFO - [2019-05-08 16:07:49,551] {tf_logging.py:115} INFO - loss = 12.821097, step = 4901 (0.347 sec)
+[2019-05-08 16:07:49,841] {logging_mixin.py:95} INFO - [2019-05-08 16:07:49,841] {tf_logging.py:115} INFO - Saving checkpoints for 4995 into /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt.
+[2019-05-08 16:07:50,114] {logging_mixin.py:95} INFO - [2019-05-08 16:07:50,114] {tf_logging.py:115} INFO - Skip the current checkpoint eval due to throttle secs (600 secs).
+[2019-05-08 16:07:50,208] {logging_mixin.py:95} INFO - [2019-05-08 16:07:50,208] {tf_logging.py:115} INFO - global_step/sec: 151.355
+[2019-05-08 16:07:50,212] {logging_mixin.py:95} INFO - [2019-05-08 16:07:50,211] {tf_logging.py:115} INFO - loss = 9.697262, step = 5001 (0.660 sec)
+[2019-05-08 16:07:50,624] {logging_mixin.py:95} INFO - [2019-05-08 16:07:50,624] {tf_logging.py:115} INFO - global_step/sec: 240.177
+[2019-05-08 16:07:50,625] {logging_mixin.py:95} INFO - [2019-05-08 16:07:50,625] {tf_logging.py:115} INFO - loss = 15.987528, step = 5101 (0.414 sec)
+[2019-05-08 16:07:50,868] {logging_mixin.py:95} INFO - [2019-05-08 16:07:50,868] {tf_logging.py:115} INFO - global_step/sec: 409.304
+[2019-05-08 16:07:50,869] {logging_mixin.py:95} INFO - [2019-05-08 16:07:50,869] {tf_logging.py:115} INFO - loss = 18.508991, step = 5201 (0.244 sec)
+[2019-05-08 16:07:51,131] {logging_mixin.py:95} INFO - [2019-05-08 16:07:51,131] {tf_logging.py:115} INFO - global_step/sec: 380.451
+[2019-05-08 16:07:51,133] {logging_mixin.py:95} INFO - [2019-05-08 16:07:51,132] {tf_logging.py:115} INFO - loss = 15.791615, step = 5301 (0.264 sec)
+[2019-05-08 16:07:51,382] {logging_mixin.py:95} INFO - [2019-05-08 16:07:51,381] {tf_logging.py:115} INFO - global_step/sec: 399.237
+[2019-05-08 16:07:51,382] {logging_mixin.py:95} INFO - [2019-05-08 16:07:51,382] {tf_logging.py:115} INFO - loss = 13.733427, step = 5401 (0.250 sec)
+[2019-05-08 16:07:51,624] {logging_mixin.py:95} INFO - [2019-05-08 16:07:51,624] {tf_logging.py:115} INFO - global_step/sec: 412.441
+[2019-05-08 16:07:51,625] {logging_mixin.py:95} INFO - [2019-05-08 16:07:51,625] {tf_logging.py:115} INFO - loss = 14.506645, step = 5501 (0.243 sec)
+[2019-05-08 16:07:51,829] {logging_mixin.py:95} INFO - [2019-05-08 16:07:51,829] {tf_logging.py:115} INFO - global_step/sec: 487.441
+[2019-05-08 16:07:51,830] {logging_mixin.py:95} INFO - [2019-05-08 16:07:51,830] {tf_logging.py:115} INFO - loss = 14.771258, step = 5601 (0.205 sec)
+[2019-05-08 16:07:52,105] {logging_mixin.py:95} INFO - [2019-05-08 16:07:52,104] {tf_logging.py:115} INFO - global_step/sec: 362.929
+[2019-05-08 16:07:52,105] {logging_mixin.py:95} INFO - [2019-05-08 16:07:52,105] {tf_logging.py:115} INFO - loss = 12.592239, step = 5701 (0.276 sec)
+[2019-05-08 16:07:52,349] {logging_mixin.py:95} INFO - [2019-05-08 16:07:52,349] {tf_logging.py:115} INFO - global_step/sec: 409.579
+[2019-05-08 16:07:52,350] {logging_mixin.py:95} INFO - [2019-05-08 16:07:52,350] {tf_logging.py:115} INFO - loss = 15.409705, step = 5801 (0.244 sec)
+[2019-05-08 16:07:52,840] {logging_mixin.py:95} INFO - [2019-05-08 16:07:52,840] {tf_logging.py:115} INFO - global_step/sec: 203.738
+[2019-05-08 16:07:52,842] {logging_mixin.py:95} INFO - [2019-05-08 16:07:52,842] {tf_logging.py:115} INFO - loss = 15.419144, step = 5901 (0.492 sec)
+[2019-05-08 16:07:53,036] {logging_mixin.py:95} INFO - [2019-05-08 16:07:53,036] {tf_logging.py:115} INFO - Saving checkpoints for 5994 into /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt.
+[2019-05-08 16:07:53,228] {logging_mixin.py:95} INFO - [2019-05-08 16:07:53,227] {tf_logging.py:115} INFO - Skip the current checkpoint eval due to throttle secs (600 secs).
+[2019-05-08 16:07:53,242] {logging_mixin.py:95} INFO - [2019-05-08 16:07:53,242] {tf_logging.py:115} INFO - global_step/sec: 248.378
+[2019-05-08 16:07:53,243] {logging_mixin.py:95} INFO - [2019-05-08 16:07:53,243] {tf_logging.py:115} INFO - loss = 19.454582, step = 6001 (0.401 sec)
+[2019-05-08 16:07:53,639] {logging_mixin.py:95} INFO - [2019-05-08 16:07:53,639] {tf_logging.py:115} INFO - global_step/sec: 251.911
+[2019-05-08 16:07:53,645] {logging_mixin.py:95} INFO - [2019-05-08 16:07:53,645] {tf_logging.py:115} INFO - loss = 8.224459, step = 6101 (0.402 sec)
+[2019-05-08 16:07:53,932] {logging_mixin.py:95} INFO - [2019-05-08 16:07:53,930] {tf_logging.py:115} INFO - global_step/sec: 344.431
+[2019-05-08 16:07:53,935] {logging_mixin.py:95} INFO - [2019-05-08 16:07:53,935] {tf_logging.py:115} INFO - loss = 15.258949, step = 6201 (0.290 sec)
+[2019-05-08 16:07:54,411] {logging_mixin.py:95} INFO - [2019-05-08 16:07:54,411] {tf_logging.py:115} INFO - global_step/sec: 207.771
+[2019-05-08 16:07:54,412] {logging_mixin.py:95} INFO - [2019-05-08 16:07:54,412] {tf_logging.py:115} INFO - loss = 14.113462, step = 6301 (0.477 sec)
+[2019-05-08 16:07:54,714] {logging_mixin.py:95} INFO - [2019-05-08 16:07:54,714] {tf_logging.py:115} INFO - global_step/sec: 329.987
+[2019-05-08 16:07:54,715] {logging_mixin.py:95} INFO - [2019-05-08 16:07:54,715] {tf_logging.py:115} INFO - loss = 16.675598, step = 6401 (0.303 sec)
+[2019-05-08 16:07:54,965] {logging_mixin.py:95} INFO - [2019-05-08 16:07:54,965] {tf_logging.py:115} INFO - global_step/sec: 398.094
+[2019-05-08 16:07:54,966] {logging_mixin.py:95} INFO - [2019-05-08 16:07:54,966] {tf_logging.py:115} INFO - loss = 17.513954, step = 6501 (0.251 sec)
+[2019-05-08 16:07:55,260] {logging_mixin.py:95} INFO - [2019-05-08 16:07:55,259] {tf_logging.py:115} INFO - global_step/sec: 339.973
+[2019-05-08 16:07:55,261] {logging_mixin.py:95} INFO - [2019-05-08 16:07:55,261] {tf_logging.py:115} INFO - loss = 14.949817, step = 6601 (0.295 sec)
+[2019-05-08 16:07:55,527] {logging_mixin.py:95} INFO - [2019-05-08 16:07:55,527] {tf_logging.py:115} INFO - global_step/sec: 372.963
+[2019-05-08 16:07:55,528] {logging_mixin.py:95} INFO - [2019-05-08 16:07:55,528] {tf_logging.py:115} INFO - loss = 18.128138, step = 6701 (0.267 sec)
+[2019-05-08 16:07:55,741] {logging_mixin.py:95} INFO - [2019-05-08 16:07:55,740] {tf_logging.py:115} INFO - global_step/sec: 468.966
+[2019-05-08 16:07:55,741] {logging_mixin.py:95} INFO - [2019-05-08 16:07:55,741] {tf_logging.py:115} INFO - loss = 14.03746, step = 6801 (0.213 sec)
+[2019-05-08 16:07:55,942] {logging_mixin.py:95} INFO - [2019-05-08 16:07:55,942] {tf_logging.py:115} INFO - global_step/sec: 497.369
+[2019-05-08 16:07:55,944] {logging_mixin.py:95} INFO - [2019-05-08 16:07:55,944] {tf_logging.py:115} INFO - loss = 11.105959, step = 6901 (0.203 sec)
+[2019-05-08 16:07:56,160] {logging_mixin.py:95} INFO - [2019-05-08 16:07:56,159] {tf_logging.py:115} INFO - Saving checkpoints for 6993 into /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt.
+[2019-05-08 16:07:56,371] {logging_mixin.py:95} INFO - [2019-05-08 16:07:56,371] {tf_logging.py:115} INFO - Skip the current checkpoint eval due to throttle secs (600 secs).
+[2019-05-08 16:07:56,388] {logging_mixin.py:95} INFO - [2019-05-08 16:07:56,388] {tf_logging.py:115} INFO - global_step/sec: 224.182
+[2019-05-08 16:07:56,388] {logging_mixin.py:95} INFO - [2019-05-08 16:07:56,388] {tf_logging.py:115} INFO - loss = 13.362168, step = 7001 (0.444 sec)
+[2019-05-08 16:07:56,595] {logging_mixin.py:95} INFO - [2019-05-08 16:07:56,594] {tf_logging.py:115} INFO - global_step/sec: 483.269
+[2019-05-08 16:07:56,595] {logging_mixin.py:95} INFO - [2019-05-08 16:07:56,595] {tf_logging.py:115} INFO - loss = 18.190792, step = 7101 (0.207 sec)
+[2019-05-08 16:07:56,817] {logging_mixin.py:95} INFO - [2019-05-08 16:07:56,817] {tf_logging.py:115} INFO - global_step/sec: 449.093
+[2019-05-08 16:07:56,818] {logging_mixin.py:95} INFO - [2019-05-08 16:07:56,818] {tf_logging.py:115} INFO - loss = 15.116294, step = 7201 (0.223 sec)
+[2019-05-08 16:07:57,029] {logging_mixin.py:95} INFO - [2019-05-08 16:07:57,029] {tf_logging.py:115} INFO - global_step/sec: 472.617
+[2019-05-08 16:07:57,030] {logging_mixin.py:95} INFO - [2019-05-08 16:07:57,030] {tf_logging.py:115} INFO - loss = 14.682888, step = 7301 (0.212 sec)
+[2019-05-08 16:07:57,217] {logging_mixin.py:95} INFO - [2019-05-08 16:07:57,217] {tf_logging.py:115} INFO - global_step/sec: 531.781
+[2019-05-08 16:07:57,219] {logging_mixin.py:95} INFO - [2019-05-08 16:07:57,218] {tf_logging.py:115} INFO - loss = 17.17807, step = 7401 (0.188 sec)
+[2019-05-08 16:07:57,432] {logging_mixin.py:95} INFO - [2019-05-08 16:07:57,431] {tf_logging.py:115} INFO - global_step/sec: 465.81
+[2019-05-08 16:07:57,433] {logging_mixin.py:95} INFO - [2019-05-08 16:07:57,432] {tf_logging.py:115} INFO - loss = 13.949292, step = 7501 (0.214 sec)
+[2019-05-08 16:07:57,656] {logging_mixin.py:95} INFO - [2019-05-08 16:07:57,656] {tf_logging.py:115} INFO - global_step/sec: 444.791
+[2019-05-08 16:07:57,657] {logging_mixin.py:95} INFO - [2019-05-08 16:07:57,657] {tf_logging.py:115} INFO - loss = 14.927086, step = 7601 (0.225 sec)
+[2019-05-08 16:07:57,861] {logging_mixin.py:95} INFO - [2019-05-08 16:07:57,861] {tf_logging.py:115} INFO - global_step/sec: 488.947
+[2019-05-08 16:07:57,862] {logging_mixin.py:95} INFO - [2019-05-08 16:07:57,862] {tf_logging.py:115} INFO - loss = 10.139403, step = 7701 (0.205 sec)
+[2019-05-08 16:07:58,112] {logging_mixin.py:95} INFO - [2019-05-08 16:07:58,112] {tf_logging.py:115} INFO - global_step/sec: 398.697
+[2019-05-08 16:07:58,112] {logging_mixin.py:95} INFO - [2019-05-08 16:07:58,112] {tf_logging.py:115} INFO - loss = 14.000848, step = 7801 (0.250 sec)
+[2019-05-08 16:07:58,341] {logging_mixin.py:95} INFO - [2019-05-08 16:07:58,341] {tf_logging.py:115} INFO - global_step/sec: 436.733
+[2019-05-08 16:07:58,341] {logging_mixin.py:95} INFO - [2019-05-08 16:07:58,341] {tf_logging.py:115} INFO - loss = 14.762977, step = 7901 (0.229 sec)
+[2019-05-08 16:07:58,520] {logging_mixin.py:95} INFO - [2019-05-08 16:07:58,520] {tf_logging.py:115} INFO - Saving checkpoints for 7992 into /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt.
+[2019-05-08 16:07:58,739] {logging_mixin.py:95} INFO - [2019-05-08 16:07:58,739] {tf_logging.py:115} INFO - Skip the current checkpoint eval due to throttle secs (600 secs).
+[2019-05-08 16:07:58,759] {logging_mixin.py:95} INFO - [2019-05-08 16:07:58,759] {tf_logging.py:115} INFO - global_step/sec: 239.154
+[2019-05-08 16:07:58,760] {logging_mixin.py:95} INFO - [2019-05-08 16:07:58,760] {tf_logging.py:115} INFO - loss = 15.048876, step = 8001 (0.418 sec)
+[2019-05-08 16:07:58,962] {logging_mixin.py:95} INFO - [2019-05-08 16:07:58,962] {tf_logging.py:115} INFO - global_step/sec: 492.655
+[2019-05-08 16:07:58,963] {logging_mixin.py:95} INFO - [2019-05-08 16:07:58,963] {tf_logging.py:115} INFO - loss = 8.7319145, step = 8101 (0.203 sec)
+[2019-05-08 16:07:59,158] {logging_mixin.py:95} INFO - [2019-05-08 16:07:59,158] {tf_logging.py:115} INFO - global_step/sec: 509.972
+[2019-05-08 16:07:59,159] {logging_mixin.py:95} INFO - [2019-05-08 16:07:59,159] {tf_logging.py:115} INFO - loss = 13.744169, step = 8201 (0.196 sec)
+[2019-05-08 16:07:59,340] {logging_mixin.py:95} INFO - [2019-05-08 16:07:59,340] {tf_logging.py:115} INFO - global_step/sec: 550.122
+[2019-05-08 16:07:59,340] {logging_mixin.py:95} INFO - [2019-05-08 16:07:59,340] {tf_logging.py:115} INFO - loss = 14.115977, step = 8301 (0.182 sec)
+[2019-05-08 16:07:59,507] {logging_mixin.py:95} INFO - [2019-05-08 16:07:59,507] {tf_logging.py:115} INFO - global_step/sec: 598.082
+[2019-05-08 16:07:59,508] {logging_mixin.py:95} INFO - [2019-05-08 16:07:59,508] {tf_logging.py:115} INFO - loss = 12.287135, step = 8401 (0.167 sec)
+[2019-05-08 16:07:59,718] {logging_mixin.py:95} INFO - [2019-05-08 16:07:59,718] {tf_logging.py:115} INFO - global_step/sec: 472.84
+[2019-05-08 16:07:59,719] {logging_mixin.py:95} INFO - [2019-05-08 16:07:59,719] {tf_logging.py:115} INFO - loss = 11.398448, step = 8501 (0.211 sec)
+[2019-05-08 16:07:59,941] {logging_mixin.py:95} INFO - [2019-05-08 16:07:59,941] {tf_logging.py:115} INFO - global_step/sec: 449.152
+[2019-05-08 16:07:59,943] {logging_mixin.py:95} INFO - [2019-05-08 16:07:59,942] {tf_logging.py:115} INFO - loss = 11.435896, step = 8601 (0.223 sec)
+[2019-05-08 16:08:00,135] {logging_mixin.py:95} INFO - [2019-05-08 16:08:00,135] {tf_logging.py:115} INFO - global_step/sec: 515.687
+[2019-05-08 16:08:00,136] {logging_mixin.py:95} INFO - [2019-05-08 16:08:00,136] {tf_logging.py:115} INFO - loss = 11.421675, step = 8701 (0.194 sec)
+[2019-05-08 16:08:00,304] {logging_mixin.py:95} INFO - [2019-05-08 16:08:00,304] {tf_logging.py:115} INFO - global_step/sec: 592.632
+[2019-05-08 16:08:00,304] {logging_mixin.py:95} INFO - [2019-05-08 16:08:00,304] {tf_logging.py:115} INFO - loss = 14.289032, step = 8801 (0.169 sec)
+[2019-05-08 16:08:00,473] {logging_mixin.py:95} INFO - [2019-05-08 16:08:00,473] {tf_logging.py:115} INFO - global_step/sec: 591.471
+[2019-05-08 16:08:00,473] {logging_mixin.py:95} INFO - [2019-05-08 16:08:00,473] {tf_logging.py:115} INFO - loss = 14.44256, step = 8901 (0.169 sec)
+[2019-05-08 16:08:00,637] {logging_mixin.py:95} INFO - [2019-05-08 16:08:00,637] {tf_logging.py:115} INFO - Saving checkpoints for 8991 into /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt.
+[2019-05-08 16:08:00,860] {logging_mixin.py:95} INFO - [2019-05-08 16:08:00,859] {tf_logging.py:115} INFO - Skip the current checkpoint eval due to throttle secs (600 secs).
+[2019-05-08 16:08:00,945] {logging_mixin.py:95} INFO - [2019-05-08 16:08:00,944] {tf_logging.py:115} INFO - global_step/sec: 212.313
+[2019-05-08 16:08:00,947] {logging_mixin.py:95} INFO - [2019-05-08 16:08:00,946] {tf_logging.py:115} INFO - loss = 14.738442, step = 9001 (0.473 sec)
+[2019-05-08 16:08:01,188] {logging_mixin.py:95} INFO - [2019-05-08 16:08:01,187] {tf_logging.py:115} INFO - global_step/sec: 410.144
+[2019-05-08 16:08:01,188] {logging_mixin.py:95} INFO - [2019-05-08 16:08:01,188] {tf_logging.py:115} INFO - loss = 13.04845, step = 9101 (0.242 sec)
+[2019-05-08 16:08:01,402] {logging_mixin.py:95} INFO - [2019-05-08 16:08:01,402] {tf_logging.py:115} INFO - global_step/sec: 465.827
+[2019-05-08 16:08:01,403] {logging_mixin.py:95} INFO - [2019-05-08 16:08:01,403] {tf_logging.py:115} INFO - loss = 14.701965, step = 9201 (0.215 sec)
+[2019-05-08 16:08:01,577] {logging_mixin.py:95} INFO - [2019-05-08 16:08:01,577] {tf_logging.py:115} INFO - global_step/sec: 573.549
+[2019-05-08 16:08:01,578] {logging_mixin.py:95} INFO - [2019-05-08 16:08:01,577] {tf_logging.py:115} INFO - loss = 14.701367, step = 9301 (0.174 sec)
+[2019-05-08 16:08:01,756] {logging_mixin.py:95} INFO - [2019-05-08 16:08:01,755] {tf_logging.py:115} INFO - global_step/sec: 558.657
+[2019-05-08 16:08:01,756] {logging_mixin.py:95} INFO - [2019-05-08 16:08:01,756] {tf_logging.py:115} INFO - loss = 10.866834, step = 9401 (0.179 sec)
+[2019-05-08 16:08:01,922] {logging_mixin.py:95} INFO - [2019-05-08 16:08:01,922] {tf_logging.py:115} INFO - global_step/sec: 599.804
+[2019-05-08 16:08:01,923] {logging_mixin.py:95} INFO - [2019-05-08 16:08:01,923] {tf_logging.py:115} INFO - loss = 11.587121, step = 9501 (0.167 sec)
+[2019-05-08 16:08:02,163] {logging_mixin.py:95} INFO - [2019-05-08 16:08:02,163] {tf_logging.py:115} INFO - global_step/sec: 415.267
+[2019-05-08 16:08:02,164] {logging_mixin.py:95} INFO - [2019-05-08 16:08:02,164] {tf_logging.py:115} INFO - loss = 14.160719, step = 9601 (0.241 sec)
+[2019-05-08 16:08:02,347] {logging_mixin.py:95} INFO - [2019-05-08 16:08:02,347] {tf_logging.py:115} INFO - global_step/sec: 542.944
+[2019-05-08 16:08:02,348] {logging_mixin.py:95} INFO - [2019-05-08 16:08:02,348] {tf_logging.py:115} INFO - loss = 13.952637, step = 9701 (0.184 sec)
+[2019-05-08 16:08:02,536] {logging_mixin.py:95} INFO - [2019-05-08 16:08:02,536] {tf_logging.py:115} INFO - global_step/sec: 529.669
+[2019-05-08 16:08:02,537] {logging_mixin.py:95} INFO - [2019-05-08 16:08:02,537] {tf_logging.py:115} INFO - loss = 14.368322, step = 9801 (0.189 sec)
+[2019-05-08 16:08:02,725] {logging_mixin.py:95} INFO - [2019-05-08 16:08:02,725] {tf_logging.py:115} INFO - global_step/sec: 529.212
+[2019-05-08 16:08:02,726] {logging_mixin.py:95} INFO - [2019-05-08 16:08:02,726] {tf_logging.py:115} INFO - loss = 19.117954, step = 9901 (0.189 sec)
+[2019-05-08 16:08:02,885] {logging_mixin.py:95} INFO - [2019-05-08 16:08:02,885] {tf_logging.py:115} INFO - Saving checkpoints for 9990 into /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt.
+[2019-05-08 16:08:03,075] {logging_mixin.py:95} INFO - [2019-05-08 16:08:03,075] {tf_logging.py:115} INFO - Skip the current checkpoint eval due to throttle secs (600 secs).
+[2019-05-08 16:08:03,098] {logging_mixin.py:95} INFO - [2019-05-08 16:08:03,097] {tf_logging.py:115} INFO - Saving checkpoints for 10000 into /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt.
+[2019-05-08 16:08:03,501] {logging_mixin.py:95} INFO - [2019-05-08 16:08:03,501] {tf_logging.py:115} INFO - Skip the current checkpoint eval due to throttle secs (600 secs).
+[2019-05-08 16:08:03,553] {logging_mixin.py:95} INFO - [2019-05-08 16:08:03,553] {tf_logging.py:115} INFO - Calling model_fn.
+[2019-05-08 16:08:04,740] {logging_mixin.py:95} INFO - [2019-05-08 16:08:04,740] {tf_logging.py:125} WARNING - Trapezoidal rule is known to produce incorrect PR-AUCs; please switch to "careful_interpolation" instead.
+[2019-05-08 16:08:04,758] {logging_mixin.py:95} INFO - [2019-05-08 16:08:04,758] {tf_logging.py:125} WARNING - Trapezoidal rule is known to produce incorrect PR-AUCs; please switch to "careful_interpolation" instead.
+[2019-05-08 16:08:04,776] {logging_mixin.py:95} INFO - [2019-05-08 16:08:04,776] {tf_logging.py:115} INFO - Done calling model_fn.
+[2019-05-08 16:08:04,795] {logging_mixin.py:95} INFO - [2019-05-08 16:08:04,795] {tf_logging.py:115} INFO - Starting evaluation at 2019-05-08-14:08:04
+[2019-05-08 16:08:04,982] {logging_mixin.py:95} INFO - [2019-05-08 16:08:04,982] {tf_logging.py:115} INFO - Graph was finalized.
+[2019-05-08 16:08:04,983] {logging_mixin.py:95} INFO - [2019-05-08 16:08:04,983] {tf_logging.py:115} INFO - Restoring parameters from /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt-10000
+[2019-05-08 16:08:05,053] {logging_mixin.py:95} INFO - [2019-05-08 16:08:05,053] {tf_logging.py:115} INFO - Running local_init_op.
+[2019-05-08 16:08:05,086] {logging_mixin.py:95} INFO - [2019-05-08 16:08:05,086] {tf_logging.py:115} INFO - Done running local_init_op.
+[2019-05-08 16:08:06,501] {logging_mixin.py:95} INFO - [2019-05-08 16:08:06,501] {tf_logging.py:115} INFO - Evaluation [500/5000]
+[2019-05-08 16:08:07,446] {logging_mixin.py:95} INFO - [2019-05-08 16:08:07,446] {tf_logging.py:115} INFO - Evaluation [1000/5000]
+[2019-05-08 16:08:08,325] {logging_mixin.py:95} INFO - [2019-05-08 16:08:08,325] {tf_logging.py:115} INFO - Evaluation [1500/5000]
+[2019-05-08 16:08:09,207] {logging_mixin.py:95} INFO - [2019-05-08 16:08:09,207] {tf_logging.py:115} INFO - Evaluation [2000/5000]
+[2019-05-08 16:08:10,123] {logging_mixin.py:95} INFO - [2019-05-08 16:08:10,123] {tf_logging.py:115} INFO - Evaluation [2500/5000]
+[2019-05-08 16:08:11,013] {logging_mixin.py:95} INFO - [2019-05-08 16:08:11,013] {tf_logging.py:115} INFO - Evaluation [3000/5000]
+[2019-05-08 16:08:11,978] {logging_mixin.py:95} INFO - [2019-05-08 16:08:11,978] {tf_logging.py:115} INFO - Evaluation [3500/5000]
+[2019-05-08 16:08:12,875] {logging_mixin.py:95} INFO - [2019-05-08 16:08:12,875] {tf_logging.py:115} INFO - Evaluation [4000/5000]
+[2019-05-08 16:08:13,908] {logging_mixin.py:95} INFO - [2019-05-08 16:08:13,908] {tf_logging.py:115} INFO - Evaluation [4500/5000]
+[2019-05-08 16:08:14,871] {logging_mixin.py:95} INFO - [2019-05-08 16:08:14,871] {tf_logging.py:115} INFO - Evaluation [5000/5000]
+[2019-05-08 16:08:15,084] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,084] {tf_logging.py:115} INFO - Finished evaluation at 2019-05-08-14:08:15
+[2019-05-08 16:08:15,084] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,084] {tf_logging.py:115} INFO - Saving dict for global step 10000: accuracy = 0.801525, accuracy_baseline = 0.776825, auc = 0.93932223, auc_precision_recall = 0.7003037, average_loss = 0.33416718, global_step = 10000, label/mean = 0.223175, loss = 13.366688, precision = 0.6926377, prediction/mean = 0.22624603, recall = 0.19896942
+[2019-05-08 16:08:15,085] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,084] {tf_logging.py:115} INFO - Saving 'checkpoint_path' summary for global step 10000: /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt-10000
+[2019-05-08 16:08:15,085] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,085] {tf_logging.py:115} INFO - Performing the final export in the end of training.
+[2019-05-08 16:08:15,101] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,101] {tf_logging.py:120} WARNING - partially_apply_saved_transform is deprecated.  Use the transform_raw_features method of the TFTrandformOutput class instead.
+[2019-05-08 16:08:15,190] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,190] {tf_logging.py:125} WARNING - Expected binary or unicode string, got type_url: "type.googleapis.com/tensorflow.AssetFileDef"
+value: "\n\013\n\tConst_3:0\022/vocab_compute_and_apply_vocabulary_1_vocabulary"
+[2019-05-08 16:08:15,190] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,190] {tf_logging.py:125} WARNING - Expected binary or unicode string, got type_url: "type.googleapis.com/tensorflow.AssetFileDef"
+value: "\n\013\n\tConst_4:0\022-vocab_compute_and_apply_vocabulary_vocabulary"
+[2019-05-08 16:08:15,191] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,191] {tf_logging.py:115} INFO - Saver not created because there are no variables in the graph to restore
+[2019-05-08 16:08:15,196] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,196] {tf_logging.py:115} INFO - Calling model_fn.
+[2019-05-08 16:08:15,964] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,964] {tf_logging.py:115} INFO - Done calling model_fn.
+[2019-05-08 16:08:15,965] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,965] {tf_logging.py:115} INFO - Signatures INCLUDED in export for Eval: None
+[2019-05-08 16:08:15,965] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,965] {tf_logging.py:115} INFO - Signatures INCLUDED in export for Classify: ['serving_default', 'classification']
+[2019-05-08 16:08:15,965] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,965] {tf_logging.py:115} INFO - Signatures INCLUDED in export for Regress: ['regression']
+[2019-05-08 16:08:15,965] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,965] {tf_logging.py:115} INFO - Signatures INCLUDED in export for Predict: ['predict']
+[2019-05-08 16:08:15,965] {logging_mixin.py:95} INFO - [2019-05-08 16:08:15,965] {tf_logging.py:115} INFO - Signatures INCLUDED in export for Train: None
+[2019-05-08 16:08:16,086] {logging_mixin.py:95} INFO - [2019-05-08 16:08:16,086] {tf_logging.py:115} INFO - Restoring parameters from /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt-10000
+[2019-05-08 16:08:16,130] {logging_mixin.py:95} INFO - [2019-05-08 16:08:16,130] {tf_logging.py:125} WARNING - From /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/tensorflow/python/estimator/estimator.py:1044: calling add_meta_graph_and_variables (from tensorflow.python.saved_model.builder_impl) with legacy_init_op is deprecated and will be removed in a future version.
+Instructions for updating:
+Pass your op to the equivalent parameter main_op instead.
+[2019-05-08 16:08:16,130] {logging_mixin.py:95} INFO - [2019-05-08 16:08:16,130] {tf_logging.py:115} INFO - Assets added to graph.
+[2019-05-08 16:08:16,132] {logging_mixin.py:95} INFO - [2019-05-08 16:08:16,132] {tf_logging.py:115} INFO - Assets written to: /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/export/chicago-taxi/temp-1557324495/assets
+[2019-05-08 16:08:16,678] {logging_mixin.py:95} INFO - [2019-05-08 16:08:16,678] {tf_logging.py:115} INFO - SavedModel written to: /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/export/chicago-taxi/temp-1557324495/saved_model.pb
+[2019-05-08 16:08:16,923] {logging_mixin.py:95} INFO - [2019-05-08 16:08:16,922] {tf_logging.py:115} INFO - Loss for final step: 13.97087.
+[2019-05-08 16:08:16,923] {logging_mixin.py:95} INFO - [2019-05-08 16:08:16,923] {tf_logging.py:115} INFO - Training complete.  Model written to /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir
+[2019-05-08 16:08:16,924] {logging_mixin.py:95} INFO - [2019-05-08 16:08:16,924] {tf_logging.py:115} INFO - Exporting eval_savedmodel for TFMA.
+[2019-05-08 16:08:16,960] {logging_mixin.py:95} INFO - [2019-05-08 16:08:16,960] {tf_logging.py:120} WARNING - partially_apply_saved_transform is deprecated.  Use the transform_raw_features method of the TFTrandformOutput class instead.
+[2019-05-08 16:08:17,051] {logging_mixin.py:95} INFO - [2019-05-08 16:08:17,051] {tf_logging.py:125} WARNING - Expected binary or unicode string, got type_url: "type.googleapis.com/tensorflow.AssetFileDef"
+value: "\n\013\n\tConst_3:0\022/vocab_compute_and_apply_vocabulary_1_vocabulary"
+[2019-05-08 16:08:17,051] {logging_mixin.py:95} INFO - [2019-05-08 16:08:17,051] {tf_logging.py:125} WARNING - Expected binary or unicode string, got type_url: "type.googleapis.com/tensorflow.AssetFileDef"
+value: "\n\013\n\tConst_4:0\022-vocab_compute_and_apply_vocabulary_vocabulary"
+[2019-05-08 16:08:17,052] {logging_mixin.py:95} INFO - [2019-05-08 16:08:17,052] {tf_logging.py:115} INFO - Saver not created because there are no variables in the graph to restore
+[2019-05-08 16:08:17,108] {logging_mixin.py:95} INFO - [2019-05-08 16:08:17,108] {tf_logging.py:115} INFO - Calling model_fn.
+[2019-05-08 16:08:19,598] {logging_mixin.py:95} INFO - [2019-05-08 16:08:19,598] {tf_logging.py:125} WARNING - Trapezoidal rule is known to produce incorrect PR-AUCs; please switch to "careful_interpolation" instead.
+[2019-05-08 16:08:19,615] {logging_mixin.py:95} INFO - [2019-05-08 16:08:19,615] {tf_logging.py:125} WARNING - Trapezoidal rule is known to produce incorrect PR-AUCs; please switch to "careful_interpolation" instead.
+[2019-05-08 16:08:19,632] {logging_mixin.py:95} INFO - [2019-05-08 16:08:19,632] {tf_logging.py:115} INFO - Done calling model_fn.
+[2019-05-08 16:08:19,636] {logging_mixin.py:95} INFO - [2019-05-08 16:08:19,636] {tf_logging.py:115} INFO - Signatures INCLUDED in export for Eval: ['eval']
+[2019-05-08 16:08:19,636] {logging_mixin.py:95} INFO - [2019-05-08 16:08:19,636] {tf_logging.py:115} INFO - Signatures INCLUDED in export for Classify: None
+[2019-05-08 16:08:19,636] {logging_mixin.py:95} INFO - [2019-05-08 16:08:19,636] {tf_logging.py:115} INFO - Signatures INCLUDED in export for Regress: None
+[2019-05-08 16:08:19,636] {logging_mixin.py:95} INFO - [2019-05-08 16:08:19,636] {tf_logging.py:115} INFO - Signatures INCLUDED in export for Predict: None
+[2019-05-08 16:08:19,636] {logging_mixin.py:95} INFO - [2019-05-08 16:08:19,636] {tf_logging.py:115} INFO - Signatures INCLUDED in export for Train: None
+[2019-05-08 16:08:19,636] {logging_mixin.py:95} INFO - [2019-05-08 16:08:19,636] {tf_logging.py:120} WARNING - Export includes no default signature!
+[2019-05-08 16:08:19,765] {logging_mixin.py:95} INFO - [2019-05-08 16:08:19,765] {tf_logging.py:115} INFO - Restoring parameters from /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/serving_model_dir/model.ckpt-10000
+[2019-05-08 16:08:19,842] {logging_mixin.py:95} INFO - [2019-05-08 16:08:19,842] {tf_logging.py:115} INFO - Assets added to graph.
+[2019-05-08 16:08:19,843] {logging_mixin.py:95} INFO - [2019-05-08 16:08:19,843] {tf_logging.py:115} INFO - Assets written to: /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/eval_model_dir/temp-1557324496/assets
+[2019-05-08 16:08:20,229] {logging_mixin.py:95} INFO - [2019-05-08 16:08:20,229] {tf_logging.py:115} INFO - SavedModel written to: /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/eval_model_dir/temp-1557324496/saved_model.pb
+[2019-05-08 16:08:20,251] {logging_mixin.py:95} INFO - [2019-05-08 16:08:20,251] {tf_logging.py:115} INFO - Exported eval_savedmodel to /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/Trainer/output/6/eval_model_dir.
+[2019-05-08 16:08:20,258] {python_operator.py:113} INFO - Done. Returned value was: None
+[2019-05-08 16:08:21,609] {logging_mixin.py:95} INFO - [2019-05-08 16:08:21,607] {jobs.py:2562} INFO - Task exited with return code 0

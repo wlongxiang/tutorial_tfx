@@ -1,0 +1,27 @@
+[2019-05-08 16:06:09,146] {__init__.py:1139} INFO - Dependencies all met for <TaskInstance: chicago_taxi_simple.ExampleValidator.chicago_taxi_simple.ExampleValidator.exec 2019-05-08T13:58:46.436844+00:00 [queued]>
+[2019-05-08 16:06:09,275] {__init__.py:1139} INFO - Dependencies all met for <TaskInstance: chicago_taxi_simple.ExampleValidator.chicago_taxi_simple.ExampleValidator.exec 2019-05-08T13:58:46.436844+00:00 [queued]>
+[2019-05-08 16:06:09,275] {__init__.py:1353} INFO - 
+--------------------------------------------------------------------------------
+[2019-05-08 16:06:09,275] {__init__.py:1354} INFO - Starting attempt 1 of 1
+[2019-05-08 16:06:09,275] {__init__.py:1355} INFO - 
+--------------------------------------------------------------------------------
+[2019-05-08 16:06:09,284] {__init__.py:1374} INFO - Executing <Task(PythonOperator): chicago_taxi_simple.ExampleValidator.exec> on 2019-05-08T13:58:46.436844+00:00
+[2019-05-08 16:06:09,284] {base_task_runner.py:119} INFO - Running: [u'airflow', u'run', 'chicago_taxi_simple.ExampleValidator', 'chicago_taxi_simple.ExampleValidator.exec', '2019-05-08T13:58:46.436844+00:00', u'--job_id', '27', u'--raw', u'-sd', u'DAGS_FOLDER/taxi/taxi_pipeline_simple.py', u'--cfg_path', '/var/folders/jw/6_2vfq291nsd3m1zjpt4t3k07hs8bd/T/tmpTVfP2E']
+[2019-05-08 16:06:09,712] {base_task_runner.py:101} INFO - Job 27: Subtask chicago_taxi_simple.ExampleValidator.exec /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/airflow/configuration.py:590: DeprecationWarning: You have two airflow.cfg files: /Users/benjamin.wang/airflow/airflow.cfg and /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/airflow.cfg. Airflow used to look at ~/airflow/airflow.cfg, even when AIRFLOW_HOME was set to a different value. Airflow will now only read /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/airflow.cfg, and you should remove the other file
+[2019-05-08 16:06:09,712] {base_task_runner.py:101} INFO - Job 27: Subtask chicago_taxi_simple.ExampleValidator.exec   category=DeprecationWarning,
+[2019-05-08 16:06:10,322] {base_task_runner.py:101} INFO - Job 27: Subtask chicago_taxi_simple.ExampleValidator.exec [2019-05-08 16:06:10,322] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-05-08 16:06:10,572] {base_task_runner.py:101} INFO - Job 27: Subtask chicago_taxi_simple.ExampleValidator.exec [2019-05-08 16:06:10,571] {__init__.py:305} INFO - Filling up the DagBag from /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/dags/taxi/taxi_pipeline_simple.py
+[2019-05-08 16:06:14,313] {base_task_runner.py:101} INFO - Job 27: Subtask chicago_taxi_simple.ExampleValidator.exec [2019-05-08 16:06:14,312] {cli.py:517} INFO - Running <TaskInstance: chicago_taxi_simple.ExampleValidator.chicago_taxi_simple.ExampleValidator.exec 2019-05-08T13:58:46.436844+00:00 [running]> on host nlhfd-lt1436.corp.irdeto.com
+[2019-05-08 16:06:14,323] {python_operator.py:104} INFO - Exporting the following env vars:
+AIRFLOW_CTX_TASK_ID=chicago_taxi_simple.ExampleValidator.exec
+AIRFLOW_CTX_DAG_ID=chicago_taxi_simple.ExampleValidator
+AIRFLOW_CTX_EXECUTION_DATE=2019-05-08T13:58:46.436844+00:00
+AIRFLOW_CTX_DAG_RUN_ID=backfill_2019-05-08T13:58:46.436844+00:00
+[2019-05-08 16:06:14,343] {logging_mixin.py:95} INFO - [2019-05-08 16:06:14,343] {tf_logging.py:115} INFO - Starting Executor execution.
+[2019-05-08 16:06:14,343] {logging_mixin.py:95} INFO - [2019-05-08 16:06:14,343] {tf_logging.py:115} INFO - Inputs for Executor is: {u'stats': [ExampleStatisticsPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/StatisticsGen/output/2/train/.4, ExampleStatisticsPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/StatisticsGen/output/2/eval/.5], u'schema': [SchemaPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/SchemaGen/output/3/.6]}
+[2019-05-08 16:06:14,343] {logging_mixin.py:95} INFO - [2019-05-08 16:06:14,343] {tf_logging.py:115} INFO - Execution properties for Executor is: {u'log_root': u'/var/tmp/tfx/logs/chicago_taxi_simple/ExampleValidator'}
+[2019-05-08 16:06:14,343] {logging_mixin.py:95} INFO - [2019-05-08 16:06:14,343] {tf_logging.py:115} INFO - Outputs for Executor is: {u'output': [ExampleValidationPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/ExampleValidator/output/5/.0]}
+[2019-05-08 16:06:14,343] {logging_mixin.py:95} INFO - [2019-05-08 16:06:14,343] {tf_logging.py:115} INFO - Validating schema against the computed statistics.
+[2019-05-08 16:06:14,370] {logging_mixin.py:95} INFO - [2019-05-08 16:06:14,370] {tf_logging.py:115} INFO - Validation complete. Anomalies written to /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/ExampleValidator/output/5/.
+[2019-05-08 16:06:14,377] {python_operator.py:113} INFO - Done. Returned value was: None
+[2019-05-08 16:06:19,134] {logging_mixin.py:95} INFO - [2019-05-08 16:06:19,132] {jobs.py:2562} INFO - Task exited with return code 0

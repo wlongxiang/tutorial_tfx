@@ -1,0 +1,62 @@
+[2019-05-08 16:00:52,954] {__init__.py:1139} INFO - Dependencies all met for <TaskInstance: chicago_taxi_simple.CsvExampleGen.chicago_taxi_simple.CsvExampleGen.checkcache 2019-05-08T13:58:46.436844+00:00 [queued]>
+[2019-05-08 16:00:52,958] {__init__.py:1139} INFO - Dependencies all met for <TaskInstance: chicago_taxi_simple.CsvExampleGen.chicago_taxi_simple.CsvExampleGen.checkcache 2019-05-08T13:58:46.436844+00:00 [queued]>
+[2019-05-08 16:00:52,958] {__init__.py:1353} INFO - 
+--------------------------------------------------------------------------------
+[2019-05-08 16:00:52,958] {__init__.py:1354} INFO - Starting attempt 1 of 1
+[2019-05-08 16:00:52,958] {__init__.py:1355} INFO - 
+--------------------------------------------------------------------------------
+[2019-05-08 16:00:53,081] {__init__.py:1374} INFO - Executing <Task(BranchPythonOperator): chicago_taxi_simple.CsvExampleGen.checkcache> on 2019-05-08T13:58:46.436844+00:00
+[2019-05-08 16:00:53,081] {base_task_runner.py:119} INFO - Running: [u'airflow', u'run', 'chicago_taxi_simple.CsvExampleGen', 'chicago_taxi_simple.CsvExampleGen.checkcache', '2019-05-08T13:58:46.436844+00:00', u'--job_id', '6', u'--raw', u'-sd', u'DAGS_FOLDER/taxi/taxi_pipeline_simple.py', u'--cfg_path', '/var/folders/jw/6_2vfq291nsd3m1zjpt4t3k07hs8bd/T/tmpiSBbSs']
+[2019-05-08 16:00:53,623] {base_task_runner.py:101} INFO - Job 6: Subtask chicago_taxi_simple.CsvExampleGen.checkcache /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/airflow/configuration.py:590: DeprecationWarning: You have two airflow.cfg files: /Users/benjamin.wang/airflow/airflow.cfg and /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/airflow.cfg. Airflow used to look at ~/airflow/airflow.cfg, even when AIRFLOW_HOME was set to a different value. Airflow will now only read /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/airflow.cfg, and you should remove the other file
+[2019-05-08 16:00:53,624] {base_task_runner.py:101} INFO - Job 6: Subtask chicago_taxi_simple.CsvExampleGen.checkcache   category=DeprecationWarning,
+[2019-05-08 16:00:54,338] {base_task_runner.py:101} INFO - Job 6: Subtask chicago_taxi_simple.CsvExampleGen.checkcache [2019-05-08 16:00:54,337] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-05-08 16:00:54,586] {base_task_runner.py:101} INFO - Job 6: Subtask chicago_taxi_simple.CsvExampleGen.checkcache [2019-05-08 16:00:54,585] {__init__.py:305} INFO - Filling up the DagBag from /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/dags/taxi/taxi_pipeline_simple.py
+[2019-05-08 16:00:58,513] {base_task_runner.py:101} INFO - Job 6: Subtask chicago_taxi_simple.CsvExampleGen.checkcache [2019-05-08 16:00:58,512] {cli.py:517} INFO - Running <TaskInstance: chicago_taxi_simple.CsvExampleGen.chicago_taxi_simple.CsvExampleGen.checkcache 2019-05-08T13:58:46.436844+00:00 [running]> on host nlhfd-lt1436.corp.irdeto.com
+[2019-05-08 16:00:58,525] {python_operator.py:104} INFO - Exporting the following env vars:
+AIRFLOW_CTX_TASK_ID=chicago_taxi_simple.CsvExampleGen.checkcache
+AIRFLOW_CTX_DAG_ID=chicago_taxi_simple.CsvExampleGen
+AIRFLOW_CTX_EXECUTION_DATE=2019-05-08T13:58:46.436844+00:00
+AIRFLOW_CTX_DAG_RUN_ID=backfill_2019-05-08T13:58:46.436844+00:00
+[2019-05-08 16:00:58,529] {logging_mixin.py:95} INFO - [2019-05-08 16:00:58,529] {metadata_store.py:50} INFO - MetadataStore initialized
+[2019-05-08 16:00:58,529] {base_task_runner.py:101} INFO - Job 6: Subtask chicago_taxi_simple.CsvExampleGen.checkcache 2019-05-08 16:00:58.529484: E bazel-out/darwin-opt/bin/ml_metadata/metadata_store/pywrap_tf_metadata_store_serialized.cc:3165] Created MetadataStore.
+[2019-05-08 16:00:58,530] {logging_mixin.py:95} INFO - [2019-05-08 16:00:58,530] {tf_logging.py:115} INFO - Processing input /Users/benjamin.wang/devel/github/tutorial_tfx/data/simple.
+[2019-05-08 16:00:58,532] {logging_mixin.py:95} INFO - [2019-05-08 16:00:58,532] {tf_logging.py:115} INFO - Registered new input: id: 1
+type_id: 1
+uri: "/Users/benjamin.wang/devel/github/tutorial_tfx/data/simple"
+properties {
+  key: "span"
+  value {
+    int_value: 1
+  }
+}
+properties {
+  key: "split"
+  value {
+    string_value: ""
+  }
+}
+properties {
+  key: "state"
+  value {
+    string_value: "published"
+  }
+}
+properties {
+  key: "type_name"
+  value {
+    string_value: "ExternalPath"
+  }
+}
+[2019-05-08 16:00:58,532] {logging_mixin.py:95} INFO - [2019-05-08 16:00:58,532] {tf_logging.py:115} INFO - Checking previous run for execution_type_name CsvExampleGen and input_dict {'input-base': [ExternalPath:/Users/benjamin.wang/devel/github/tutorial_tfx/data/simple.1]}
+[2019-05-08 16:00:58,533] {logging_mixin.py:95} INFO - [2019-05-08 16:00:58,533] {tf_logging.py:115} INFO - Artifact id 1 is used in executions set([])
+[2019-05-08 16:00:58,533] {logging_mixin.py:95} INFO - [2019-05-08 16:00:58,533] {tf_logging.py:115} INFO - Following executions include all input artifacts: set([])
+[2019-05-08 16:00:58,533] {logging_mixin.py:95} INFO - [2019-05-08 16:00:58,533] {tf_logging.py:115} INFO - No execution matching type id and input artifacts found
+[2019-05-08 16:00:58,535] {logging_mixin.py:95} INFO - [2019-05-08 16:00:58,535] {base_driver.py:182} INFO - Preparing new execution.
+[2019-05-08 16:00:58,536] {logging_mixin.py:95} INFO - [2019-05-08 16:00:58,536] {tf_logging.py:115} INFO - Creating output artifact uri /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/CsvExampleGen/examples/1/train/ as directory
+[2019-05-08 16:00:58,537] {logging_mixin.py:95} INFO - [2019-05-08 16:00:58,537] {tf_logging.py:115} INFO - Creating output artifact uri /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/CsvExampleGen/examples/1/eval/ as directory
+[2019-05-08 16:00:58,559] {logging_mixin.py:95} INFO - [2019-05-08 16:00:58,559] {airflow_adapter.py:131} INFO - No cached execution found. Starting executor.
+[2019-05-08 16:00:58,560] {python_operator.py:113} INFO - Done. Returned value was: chicago_taxi_simple.CsvExampleGen.exec
+[2019-05-08 16:00:58,560] {python_operator.py:143} INFO - Following branch [u'chicago_taxi_simple.CsvExampleGen.exec']
+[2019-05-08 16:00:58,560] {python_operator.py:144} INFO - Marking other directly downstream tasks as skipped
+[2019-05-08 16:00:58,672] {python_operator.py:163} INFO - Done.
+[2019-05-08 16:01:02,972] {logging_mixin.py:95} INFO - [2019-05-08 16:01:02,970] {jobs.py:2562} INFO - Task exited with return code 0

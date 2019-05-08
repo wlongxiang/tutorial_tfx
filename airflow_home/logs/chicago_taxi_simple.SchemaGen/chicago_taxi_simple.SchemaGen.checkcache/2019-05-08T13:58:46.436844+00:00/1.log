@@ -1,0 +1,44 @@
+[2019-05-08 16:03:27,763] {__init__.py:1139} INFO - Dependencies all met for <TaskInstance: chicago_taxi_simple.SchemaGen.chicago_taxi_simple.SchemaGen.checkcache 2019-05-08T13:58:46.436844+00:00 [queued]>
+[2019-05-08 16:03:27,771] {__init__.py:1139} INFO - Dependencies all met for <TaskInstance: chicago_taxi_simple.SchemaGen.chicago_taxi_simple.SchemaGen.checkcache 2019-05-08T13:58:46.436844+00:00 [queued]>
+[2019-05-08 16:03:27,771] {__init__.py:1353} INFO - 
+--------------------------------------------------------------------------------
+[2019-05-08 16:03:27,771] {__init__.py:1354} INFO - Starting attempt 1 of 1
+[2019-05-08 16:03:27,771] {__init__.py:1355} INFO - 
+--------------------------------------------------------------------------------
+[2019-05-08 16:03:27,917] {__init__.py:1374} INFO - Executing <Task(BranchPythonOperator): chicago_taxi_simple.SchemaGen.checkcache> on 2019-05-08T13:58:46.436844+00:00
+[2019-05-08 16:03:27,918] {base_task_runner.py:119} INFO - Running: [u'airflow', u'run', 'chicago_taxi_simple.SchemaGen', 'chicago_taxi_simple.SchemaGen.checkcache', '2019-05-08T13:58:46.436844+00:00', u'--job_id', '16', u'--raw', u'-sd', u'DAGS_FOLDER/taxi/taxi_pipeline_simple.py', u'--cfg_path', '/var/folders/jw/6_2vfq291nsd3m1zjpt4t3k07hs8bd/T/tmpSuKuHD']
+[2019-05-08 16:03:28,449] {base_task_runner.py:101} INFO - Job 16: Subtask chicago_taxi_simple.SchemaGen.checkcache /Users/benjamin.wang/devel/github/tutorial_tfx/env/lib/python2.7/site-packages/airflow/configuration.py:590: DeprecationWarning: You have two airflow.cfg files: /Users/benjamin.wang/airflow/airflow.cfg and /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/airflow.cfg. Airflow used to look at ~/airflow/airflow.cfg, even when AIRFLOW_HOME was set to a different value. Airflow will now only read /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/airflow.cfg, and you should remove the other file
+[2019-05-08 16:03:28,450] {base_task_runner.py:101} INFO - Job 16: Subtask chicago_taxi_simple.SchemaGen.checkcache   category=DeprecationWarning,
+[2019-05-08 16:03:29,747] {base_task_runner.py:101} INFO - Job 16: Subtask chicago_taxi_simple.SchemaGen.checkcache [2019-05-08 16:03:29,746] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-05-08 16:03:29,973] {base_task_runner.py:101} INFO - Job 16: Subtask chicago_taxi_simple.SchemaGen.checkcache [2019-05-08 16:03:29,972] {__init__.py:305} INFO - Filling up the DagBag from /Users/benjamin.wang/devel/github/tutorial_tfx/airflow_home/dags/taxi/taxi_pipeline_simple.py
+[2019-05-08 16:03:33,182] {base_task_runner.py:101} INFO - Job 16: Subtask chicago_taxi_simple.SchemaGen.checkcache [2019-05-08 16:03:33,181] {cli.py:517} INFO - Running <TaskInstance: chicago_taxi_simple.SchemaGen.chicago_taxi_simple.SchemaGen.checkcache 2019-05-08T13:58:46.436844+00:00 [running]> on host nlhfd-lt1436.corp.irdeto.com
+[2019-05-08 16:03:33,191] {python_operator.py:104} INFO - Exporting the following env vars:
+AIRFLOW_CTX_TASK_ID=chicago_taxi_simple.SchemaGen.checkcache
+AIRFLOW_CTX_DAG_ID=chicago_taxi_simple.SchemaGen
+AIRFLOW_CTX_EXECUTION_DATE=2019-05-08T13:58:46.436844+00:00
+AIRFLOW_CTX_DAG_RUN_ID=backfill_2019-05-08T13:58:46.436844+00:00
+[2019-05-08 16:03:33,198] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,197] {metadata_store.py:50} INFO - MetadataStore initialized
+[2019-05-08 16:03:33,198] {base_task_runner.py:101} INFO - Job 16: Subtask chicago_taxi_simple.SchemaGen.checkcache 2019-05-08 16:03:33.197909: E bazel-out/darwin-opt/bin/ml_metadata/metadata_store/pywrap_tf_metadata_store_serialized.cc:3165] Created MetadataStore.
+[2019-05-08 16:03:33,198] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,198] {base_driver.py:248} INFO - Enter driver.
+[2019-05-08 16:03:33,198] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,198] {base_driver.py:91} INFO - Starting BaseDriver driver.
+[2019-05-08 16:03:33,199] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,198] {base_driver.py:93} INFO - Inputs for BaseDriver is: {'stats': [ExampleStatisticsPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/StatisticsGen/output/2/train/.4, ExampleStatisticsPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/StatisticsGen/output/2/eval/.5]}
+[2019-05-08 16:03:33,199] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,199] {base_driver.py:95} INFO - Execution properties for BaseDriver is: {'log_root': '/var/tmp/tfx/logs/chicago_taxi_simple/SchemaGen'}
+[2019-05-08 16:03:33,199] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,199] {base_driver.py:97} INFO - Outputs for BaseDriver is: {'output': [SchemaPath:.0]}
+[2019-05-08 16:03:33,199] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,199] {tf_logging.py:115} INFO - Checking previous run for execution_type_name SchemaGen and input_dict {'stats': [ExampleStatisticsPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/StatisticsGen/output/2/train/.4, ExampleStatisticsPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/StatisticsGen/output/2/eval/.5]}
+[2019-05-08 16:03:33,200] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,200] {tf_logging.py:115} INFO - Artifact id 4 is used in executions set([2L])
+[2019-05-08 16:03:33,200] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,200] {tf_logging.py:115} INFO - Artifact id 5 is used in executions set([2L])
+[2019-05-08 16:03:33,200] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,200] {tf_logging.py:115} INFO - Following executions include all input artifacts: set([2L])
+[2019-05-08 16:03:33,202] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,202] {tf_logging.py:115} INFO - No execution matching type id and input artifacts found
+[2019-05-08 16:03:33,204] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,204] {base_driver.py:182} INFO - Preparing new execution.
+[2019-05-08 16:03:33,205] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,205] {tf_logging.py:115} INFO - Creating output artifact uri /Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/SchemaGen/output/3/ as directory
+[2019-05-08 16:03:33,205] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,205] {base_driver.py:252} INFO - Prepared execution.
+[2019-05-08 16:03:33,206] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,206] {base_driver.py:91} INFO - Starting BaseDriver driver.
+[2019-05-08 16:03:33,206] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,206] {base_driver.py:93} INFO - Inputs for BaseDriver is: {'stats': [ExampleStatisticsPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/StatisticsGen/output/2/train/.4, ExampleStatisticsPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/StatisticsGen/output/2/eval/.5]}
+[2019-05-08 16:03:33,206] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,206] {base_driver.py:95} INFO - Execution properties for BaseDriver is: {'log_root': '/var/tmp/tfx/logs/chicago_taxi_simple/SchemaGen'}
+[2019-05-08 16:03:33,206] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,206] {base_driver.py:97} INFO - Outputs for BaseDriver is: {'output': [SchemaPath:/Users/benjamin.wang/devel/github/tutorial_tfx/tfx_outputs/pipelines/chicago_taxi_simple/SchemaGen/output/3/.0]}
+[2019-05-08 16:03:33,337] {logging_mixin.py:95} INFO - [2019-05-08 16:03:33,337] {airflow_adapter.py:131} INFO - No cached execution found. Starting executor.
+[2019-05-08 16:03:33,337] {python_operator.py:113} INFO - Done. Returned value was: chicago_taxi_simple.SchemaGen.exec
+[2019-05-08 16:03:33,337] {python_operator.py:143} INFO - Following branch [u'chicago_taxi_simple.SchemaGen.exec']
+[2019-05-08 16:03:33,337] {python_operator.py:144} INFO - Marking other directly downstream tasks as skipped
+[2019-05-08 16:03:33,341] {python_operator.py:163} INFO - Done.
+[2019-05-08 16:03:37,767] {logging_mixin.py:95} INFO - [2019-05-08 16:03:37,766] {jobs.py:2562} INFO - Task exited with return code 0
